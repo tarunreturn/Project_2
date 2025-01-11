@@ -1,0 +1,68 @@
+pipeline {
+    agent any
+    tools {
+        nodejs 'node21'
+    }
+    environment { 
+        SCANNER_HOME = tool 'Sonar-scn' 
+    }
+    stages {
+        stage('Git Checkout') {
+            steps {
+                git 'https://github.com/tarunreturn/3-Tier-Full-Stack.git'
+            }
+        }
+        stage('Install Dependencies') {
+            steps {
+                sh "npm install"
+            }
+        }
+        stage('Unit Test') {
+            steps {
+                sh "npm test"
+            }
+        }
+        stage('Trivy File System Scan') {
+            steps {
+                sh "trivy fs --format table -o fs-report.html ."
+            }
+        }
+        stage('SonarQube Analysis') {
+            steps {
+                withSonarQubeEnv('sonar') {
+                    sh "${SCANNER_HOME}/bin/sonar-scanner -Dsonar.projectKey=Campground -Dsonar.projectName=Campground"
+                }
+            }
+        }
+        stage('Docker Image Build & Tag') {
+            steps {
+                script {
+                    sh "docker build -t tarunreturn/camp:latest ."
+                }
+            }
+        }
+        stage('Trivy Image Scan') {
+            steps {
+                sh "trivy image --format table -o image-report.html tarunreturn/camp:latest"
+            }
+        }
+        stage('Docker push') {
+            steps {
+                script {
+                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker') {
+                        sh "docker push tarunreturn/camp:latest"
+                    }
+                }
+            }
+        }
+        stage('Docker Deploy to Dev') {
+            steps {
+                script {
+                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker') {
+                        sh "docker run -d -p 3000:3000 --name camp-dev tarunreturn/camp:latest"
+                    }
+                }
+            }
+        }
+    }
+}
