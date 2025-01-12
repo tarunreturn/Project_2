@@ -113,4 +113,156 @@ Integrate with:
      http://VM_IP:3000
      ```  
      *(Replace `VM_IP` with the IP address of your Ubuntu machine.)*
+     ## DEV ENV
+
+### To Deploy Your Application in DEV ENV:
+1. **Setup**  
+   - Use a **t2.large** server for Jenkins and Docker.  
+   - Use a **t2.medium** server for SonarQube.
+
+### Pipeline Code
+```groovy
+pipeline {
+    agent any
+    tools {
+        nodejs 'node21'
+    }
+    environment { 
+        SCANNER_HOME = tool 'Sonar-scn' 
+    }
+    stages {
+        stage('Git Checkout') {
+            steps {
+                git 'https://github.com/tarunreturn/3-Tier-Full-Stack.git'
+            }
+        }
+        stage('Install Dependencies') {
+            steps {
+                sh "npm install"
+            }
+        }
+        stage('Unit Test') {
+            steps {
+                sh "npm test"
+            }
+        }
+        stage('Trivy File System Scan') {
+            steps {
+                sh "trivy fs --format table -o fs-report.html ."
+            }
+        }
+        stage('SonarQube Analysis') {
+            steps {
+                withSonarQubeEnv('sonar') {
+                    sh "${SCANNER_HOME}/bin/sonar-scanner -Dsonar.projectKey=Campground -Dsonar.projectName=Campground"
+                }
+            }
+        }
+        stage('Docker Image Build & Tag') {
+            steps {
+                script {
+                    sh "docker build -t tarunreturn/camp:latest ."
+                }
+            }
+        }
+        stage('Trivy Image Scan') {
+            steps {
+                sh "trivy image --format table -o image-report.html tarunreturn/camp:latest"
+            }
+        }
+        stage('Docker Push') {
+            steps {
+                script {
+                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker') {
+                        sh "docker push tarunreturn/camp:latest"
+                    }
+                }
+            }
+        }
+        stage('Docker Deploy to Dev') {
+            steps {
+                script {
+                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker') {
+                        sh "docker run -d -p 3000:3000 --name camp-dev tarunreturn/camp:latest"
+                    }
+                }
+            }
+        }
+    }
+}
+```
+## Pipeline Stages Explanation
+
+### 1. Git Checkout
+- **Purpose:** Clone the application source code from the GitHub repository.  
+- **Steps:**  
+  - Pulls the repository [https://github.com/tarunreturn/3-Tier-Full-Stack.git](https://github.com/tarunreturn/3-Tier-Full-Stack.git).  
+  - Ensures the codebase is available for subsequent pipeline stages.  
+
+---
+
+### 2. Install Dependencies
+- **Purpose:** Install the required Node.js dependencies for the project.  
+- **Steps:**  
+  - Runs `npm install` to fetch and set up all necessary packages listed in the `package.json` file.  
+
+---
+
+### 3. Unit Test
+- **Purpose:** Run the project's unit tests to verify functionality.  
+- **Steps:**  
+  - Executes `npm test` to run all the test cases.  
+  - Ensures the code behaves as expected.  
+
+---
+
+### 4. Trivy File System Scan
+- **Purpose:** Perform a security scan on the file system to identify vulnerabilities.  
+- **Steps:**  
+  - Runs `trivy fs` to scan the file system for issues.  
+  - Generates a report (`fs-report.html`) in table format for documentation and review.  
+
+---
+
+### 5. SonarQube Analysis
+- **Purpose:** Perform static code analysis to evaluate code quality and detect bugs or vulnerabilities.  
+- **Steps:**  
+  - Uses the SonarQube scanner to analyze the code.  
+  - Publishes the results to the SonarQube server.  
+  - Requires `SCANNER_HOME` to reference the SonarQube scanner tool, and runs with the provided `sonar.projectKey` and `sonar.projectName`.  
+
+---
+
+### 6. Docker Image Build & Tag
+- **Purpose:** Create a Docker image for the application and tag it appropriately.  
+- **Steps:**  
+  - Executes `docker build` to create an image using the Dockerfile in the repository.  
+  - Tags the image as `tarunreturn/camp:latest`.  
+
+---
+
+### 7. Trivy Image Scan
+- **Purpose:** Perform a security scan on the newly built Docker image.  
+- **Steps:**  
+  - Uses `trivy image` to scan the Docker image (`tarunreturn/camp:latest`) for vulnerabilities.  
+  - Generates a report (`image-report.html`) for documentation.  
+
+---
+
+### 8. Docker Push
+- **Purpose:** Push the Docker image to a Docker registry.  
+- **Steps:**  
+  - Authenticates with the Docker registry using credentials (`docker`).  
+  - Executes `docker push` to upload the image (`tarunreturn/camp:latest`) to the registry.  
+
+---
+
+### 9. Docker Deploy to Dev
+- **Purpose:** Deploy the Docker image to a development environment.  
+- **Steps:**  
+  - Authenticates with the Docker registry using credentials (`docker`).  
+  - Runs the Docker container using the image (`tarunreturn/camp:latest`).  
+  - Maps port `3000` of the container to port `3000` on the host machine.  
+  - Names the running container `camp-dev`.  
+
 
