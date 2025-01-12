@@ -636,12 +636,8 @@ The instructions emphasize both local and production-level deployment scenarios,
 
 You can connect with me on the following platforms:
 
-- **GitHub:** [https://github.com/tarunreturn](https://github.com/tarunreturn)  
-  *Explore my repositories and contributions.*  
-
-- **LinkedIn:** [https://www.linkedin.com/in/tarun-kumar-50a331287](https://www.linkedin.com/in/tarun-kumar-50a331287)  
-  *Let's connect for professional opportunities and collaboration.*  
-
-- **Email:** [tarunkumar8367053296@gmail.com](mailto:tarunkumar8367053296@gmail.com)  
-  *Feel free to reach out for inquiries or collaborations.*  
+## Contact Information
+- **GitHub**: [tarunreturn](https://github.com/tarunreturn)
+- **LinkedIn**: [Tarun Kumar](https://www.linkedin.com/in/tarun-kumar-50a331287)
+- **Email**: tarunkumar8367053296@gmail.com
 
