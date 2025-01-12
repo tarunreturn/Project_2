@@ -272,6 +272,8 @@ pipeline {
   - Names the running container `camp-dev`.
 ## OUTPUT
 
+<img src="https://i.imghippo.com/files/Ith7026EO.png" alt="" border="0">
+
 # PROD ENV
 
 ## To Deploy Your Application in PROD ENV
@@ -623,6 +625,8 @@ pipeline {
   - Uses `kubectl` to check the status of the deployed pods and services in the `webapps` namespace.
 
 ## OUTPUT
+
+<img src="https://i.imghippo.com/files/Ith7026EO.png" alt="" border="0">
 
 ## Conclusion
 
