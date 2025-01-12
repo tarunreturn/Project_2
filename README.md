@@ -117,6 +117,8 @@ Integrate with:
      *(Replace `VM_IP` with the IP address of your Ubuntu machine.)*
 ## OUTPUT
 
+<img src="https://i.imghippo.com/files/Ith7026EO.png" alt="" border="0">
+
  ## DEV ENV
 
 ### To Deploy Your Application in DEV ENV:
