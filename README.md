@@ -115,7 +115,9 @@ Integrate with:
      http://VM_IP:3000
      ```  
      *(Replace `VM_IP` with the IP address of your Ubuntu machine.)*
-     ## DEV ENV
+## OUTPUT
+
+ ## DEV ENV
 
 ### To Deploy Your Application in DEV ENV:
 1. **Setup**  
