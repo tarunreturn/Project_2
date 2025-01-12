@@ -633,10 +633,6 @@ The instructions emphasize both local and production-level deployment scenarios,
 ---
 
 ## Contact Information
-
-You can connect with me on the following platforms:
-
-## Contact Information
 - **GitHub**: [tarunreturn](https://github.com/tarunreturn)
 - **LinkedIn**: [Tarun Kumar](https://www.linkedin.com/in/tarun-kumar-50a331287)
 - **Email**: tarunkumar8367053296@gmail.com
