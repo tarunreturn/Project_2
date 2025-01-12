@@ -536,3 +536,81 @@ pipeline {
     }
 }
 ```
+## Pipeline Stages Explanation
+
+### 1. Git Checkout
+- **Purpose:** Clone the application source code from the GitHub repository.  
+- **Steps:**  
+  - The repository [https://github.com/tarunreturn/3-Tier-Full-Stack.git](https://github.com/tarunreturn/3-Tier-Full-Stack.git) is cloned.  
+  - Ensures the codebase is available for the rest of the pipeline stages.  
+
+---
+
+### 2. Install Dependencies
+- **Purpose:** Install the required Node.js dependencies for the project.  
+- **Steps:**  
+  - Executes `npm install` to install all dependencies listed in the `package.json` file.  
+
+---
+
+### 3. Unit Test
+- **Purpose:** Run the project's unit tests to verify functionality.  
+- **Steps:**  
+  - Executes `npm test` to run the unit tests.  
+  - Ensures the correctness of the application code.  
+
+---
+
+### 4. Trivy File System Scan
+- **Purpose:** Perform a security scan on the file system to identify vulnerabilities.  
+- **Steps:**  
+  - Uses `trivy fs` to scan the file system for security issues.  
+  - Outputs a report in HTML format (`fs-report.html`), which will be saved for review.  
+
+---
+
+### 5. SonarQube Analysis
+- **Purpose:** Analyze the code for quality issues using SonarQube.  
+- **Steps:**  
+  - Runs the SonarQube scanner (`sonar-scanner`) to analyze the project code.  
+  - Uses the provided project key (`Campground`) and name (`Campground`) to publish the results to the SonarQube server.  
+
+---
+
+### 6. Docker Image Build & Tag
+- **Purpose:** Build a Docker image for the application and tag it for deployment.  
+- **Steps:**  
+  - Uses the `docker build` command to create a Docker image from the Dockerfile.  
+  - Tags the image as `tarunreturn/camp:latest`.  
+
+---
+
+### 7. Trivy Image Scan
+- **Purpose:** Perform a security scan on the newly built Docker image.  
+- **Steps:**  
+  - Runs `trivy image` to scan the Docker image (`tarunreturn/camp:latest`) for vulnerabilities.  
+  - Outputs the scan results to `image-report.html` for documentation.  
+
+---
+
+### 8. Docker Push
+- **Purpose:** Push the Docker image to a Docker registry for storage and further use.  
+- **Steps:**  
+  - Uses `withDockerRegistry` to authenticate with the Docker registry using the provided credentials (`docker`).  
+  - Executes `docker push` to upload the image (`tarunreturn/camp:latest`) to the Docker registry.  
+
+---
+
+### 9. Deploy to EKS
+- **Purpose:** Deploy the application to Amazon EKS (Elastic Kubernetes Service).  
+- **Steps:**  
+  - Uses `kubectl` to apply Kubernetes manifests (e.g., deployments, services) located in the `Manifests/` directory.  
+  - The deployment is done in the `webapps` namespace in the EKS cluster (`prod-env`).  
+
+---
+
+### 10. Verify the Deployment
+- **Purpose:** Verify that the application was deployed successfully in the EKS cluster.  
+- **Steps:**  
+  - Uses `kubectl` to check the status of the deployed pods and services in the `webapps` namespace.  
+
