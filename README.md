@@ -671,6 +671,11 @@ pipeline {
 ## OUTPUT
 
 <img src="https://i.imghippo.com/files/Ith7026EO.png" alt="" border="0">
+<img src="https://i.imghippo.com/files/za9074NcA.png" alt="" border="0">
+<img src="https://i.imghippo.com/files/sWD6294.png" alt="" border="0">
+<img src="https://i.imghippo.com/files/CWY6597lyo.png" alt="" border="0">
+<img src="https://i.imghippo.com/files/QDlO6114euk.png" alt="" border="0">
+<img src="https://i.imghippo.com/files/NJCw4491cds.png" alt="" border="0">
 
 ## Conclusion
 
