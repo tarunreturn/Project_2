@@ -119,6 +119,14 @@ Integrate with:
 
 <img src="https://i.imghippo.com/files/Ith7026EO.png" alt="" border="0">
 
+<img src="https://i.imghippo.com/files/p3929IE.png" alt="" border="0">
+
+<img src="https://i.imghippo.com/files/zA4467FYw.png" alt="" border="0">
+
+<img src="https://i.imghippo.com/files/NFA3586jiQ.png" alt="" border="0">
+
+<img src="https://i.imghippo.com/files/AuSb7343cg.png" alt="" border="0">
+
  ## DEV ENV
 
 ### To Deploy Your Application in DEV ENV:
