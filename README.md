@@ -267,7 +267,9 @@ pipeline {
   - Authenticates with the Docker registry using credentials (`docker`).  
   - Runs the Docker container using the image (`tarunreturn/camp:latest`).  
   - Maps port `3000` of the container to port `3000` on the host machine.  
-  - Names the running container `camp-dev`.  
+  - Names the running container `camp-dev`.
+## OUTPUT
+
 # PROD ENV
 
 ## To Deploy Your Application in PROD ENV
@@ -616,7 +618,10 @@ pipeline {
 ### 10. Verify the Deployment
 - **Purpose:** Verify that the application was deployed successfully in the EKS cluster.  
 - **Steps:**  
-  - Uses `kubectl` to check the status of the deployed pods and services in the `webapps` namespace.  
+  - Uses `kubectl` to check the status of the deployed pods and services in the `webapps` namespace.
+
+## OUTPUT
+
 ## Conclusion
 
 This document serves as a comprehensive guide to setting up and deploying a 3-tier full-stack application.  
