@@ -613,4 +613,26 @@ pipeline {
 - **Purpose:** Verify that the application was deployed successfully in the EKS cluster.  
 - **Steps:**  
   - Uses `kubectl` to check the status of the deployed pods and services in the `webapps` namespace.  
+## Conclusion
+
+This document serves as a comprehensive guide to setting up and deploying a 3-tier full-stack application.  
+It covers the step-by-step process of configuring essential tools such as Jenkins, Docker, SonarQube, and Kubernetes (EKS).  
+By integrating these tools, it ensures efficient CI/CD pipelines, robust testing, and seamless deployment.  
+
+The instructions emphasize both local and production-level deployment scenarios, demonstrating how to build, test, and deploy scalable applications in a cloud-native environment.
+
+---
+
+## Contact Information
+
+You can connect with me on the following platforms:
+
+- **GitHub:** [https://github.com/tarunreturn](https://github.com/tarunreturn)  
+  *Explore my repositories and contributions.*  
+
+- **LinkedIn:** [https://www.linkedin.com/in/tarun-kumar-50a331287](https://www.linkedin.com/in/tarun-kumar-50a331287)  
+  *Let's connect for professional opportunities and collaboration.*  
+
+- **Email:** [tarunkumar8367053296@gmail.com](mailto:tarunkumar8367053296@gmail.com)  
+  *Feel free to reach out for inquiries or collaborations.*  
 
