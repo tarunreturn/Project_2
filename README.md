@@ -290,6 +290,12 @@ pipeline {
 ## OUTPUT
 
 <img src="https://i.imghippo.com/files/Ith7026EO.png" alt="" border="0">
+<img src="https://i.imghippo.com/files/pWwT6129oUo.png" alt="" border="0">
+<img src="https://i.imghippo.com/files/kA5939PSs.png" alt="" border="0">
+<img src="https://i.imghippo.com/files/VpG6057SUg.png" alt="" border="0">
+<img src="https://i.imghippo.com/files/ZfkB5498Tmw.png" alt="" border="0">
+<img src="https://i.imghippo.com/files/Lnvz8855JrY.png" alt="" border="0">
+<img src="https://i.imghippo.com/files/OaO9604fdM.png" alt="" border="0">
 
 # PROD ENV
 
