@@ -264,5 +264,41 @@ pipeline {
   - Runs the Docker container using the image (`tarunreturn/camp:latest`).  
   - Maps port `3000` of the container to port `3000` on the host machine.  
   - Names the running container `camp-dev`.  
+# PROD ENV
+
+## To Deploy Your Application in PROD ENV
+1. **Setup**  
+   - Use a **t2.large** server for Jenkins, Docker, and EKS (including its components).  
+   - Use a **t2.medium** server for SonarQube.  
+   - **Note:** Reuse the previously set up servers.
+
+---
+
+### 1. Create a User in AWS IAM
+- Log in to the AWS Management Console.  
+- Navigate to **IAM > Users > Add User**.  
+- Provide a name for the user (e.g., `YourUserName`).  
+- Attach the following policies to the newly created user:  
+  - `AmazonEC2FullAccess`  
+  - `AmazonEKS_CNI_Policy`  
+  - `AmazonEKSClusterPolicy`  
+  - `AmazonEKSWorkerNodePolicy`  
+  - `AWSCloudFormationFullAccess`  
+  - `IAMFullAccess`  
+
+#### Custom Policy
+- Create and attach the following custom policy to the user:
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": "eks:*",
+            "Resource": "*"
+        }
+    ]
+}
 
 
