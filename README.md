@@ -117,22 +117,18 @@ Integrate with:
 ## OUTPUT
 ---
 
-<img src="https://i.imghippo.com/files/Ith7026EO.png" alt="" border="0">
+<img src="https://raw.githubusercontent.com/tarunreturn/output_images/main/Project_2/Output/2.png" width="800"/>
+---
+
+<img src="https://raw.githubusercontent.com/tarunreturn/output_images/main/Project_2/Output/3.png" width="800"/>
 
 ---
 
-<img src="https://i.imghippo.com/files/p3929IE.png" alt="" border="0">
-
+<img src="https://raw.githubusercontent.com/tarunreturn/output_images/main/Project_2/Output/4.png" width="800"/>
 ---
-
-<img src="https://i.imghippo.com/files/zA4467FYw.png" alt="" border="0">
-
+<img src="https://raw.githubusercontent.com/tarunreturn/output_images/main/Project_2/Output/5.png" width="800"/>
 ---
-<img src="https://i.imghippo.com/files/NFA3586jiQ.png" alt="" border="0">
-
----
-<img src="https://i.imghippo.com/files/AuSb7343cg.png" alt="" border="0">
-
+<img src="https://raw.githubusercontent.com/tarunreturn/output_images/main/Project_2/Output/6.png" width="800"/>
 ---
 
  ## DEV ENV
@@ -289,32 +285,31 @@ pipeline {
 ## OUTPUT
 ---
 
-<img src="https://i.imghippo.com/files/Ith7026EO.png" alt="" border="0">
+<img src="https://raw.githubusercontent.com/tarunreturn/output_images/main/Project_2/Output/7.png" width="800"/>
 
 ---
 
-<img src="https://i.imghippo.com/files/pWwT6129oUo.png" alt="" border="0">
+<img src="https://raw.githubusercontent.com/tarunreturn/output_images/main/Project_2/Output/8.png" width="800"/>
 
 ---
 
-<img src="https://i.imghippo.com/files/kA5939PSs.png" alt="" border="0">
+<img src="https://raw.githubusercontent.com/tarunreturn/output_images/main/Project_2/Output/9.png" width="800"/>
 
 ---
 
-<img src="https://i.imghippo.com/files/VpG6057SUg.png" alt="" border="0">
+<img src="https://raw.githubusercontent.com/tarunreturn/output_images/main/Project_2/Output/10.png" width="800"/>
 
 ---
 
-<img src="https://i.imghippo.com/files/ZfkB5498Tmw.png" alt="" border="0">
+<img src="https://raw.githubusercontent.com/tarunreturn/output_images/main/Project_2/Output/11.png" width="800"/>
 
 ---
 
-<img src="https://i.imghippo.com/files/Lnvz8855JrY.png" alt="" border="0">
+<img src="https://raw.githubusercontent.com/tarunreturn/output_images/main/Project_2/Output/12.png" width="800"/>
 
 ---
 
-<img src="https://i.imghippo.com/files/OaO9604fdM.png" alt="" border="0">
-
+<img src="https://raw.githubusercontent.com/tarunreturn/output_images/main/Project_2/Output/13.png" width="800"/>
 ---
 
 # PROD ENV
@@ -671,28 +666,25 @@ pipeline {
 
 ---
 
-<img src="https://i.imghippo.com/files/Ith7026EO.png" alt="" border="0">
+<img src="https://raw.githubusercontent.com/tarunreturn/output_images/main/Project_2/Output/14.png" width="800"/>
+---
+
+<img src="https://raw.githubusercontent.com/tarunreturn/output_images/main/Project_2/Output/15.png" width="800"/>
 
 ---
 
-<img src="https://i.imghippo.com/files/za9074NcA.png" alt="" border="0">
+<img src="https://raw.githubusercontent.com/tarunreturn/output_images/main/Project_2/Output/16.png" width="800"/>
+---
+
+<img src="https://raw.githubusercontent.com/tarunreturn/output_images/main/Project_2/Output/17.png" width="800"/>
 
 ---
 
-<img src="https://i.imghippo.com/files/sWD6294.png" alt="" border="0">
+<img src="https://raw.githubusercontent.com/tarunreturn/output_images/main/Project_2/Output/18.png" width="800"/>
 
 ---
 
-<img src="https://i.imghippo.com/files/CWY6597lyo.png" alt="" border="0">
-
----
-
-<img src="https://i.imghippo.com/files/QDlO6114euk.png" alt="" border="0">
-
----
-
-<img src="https://i.imghippo.com/files/NJCw4491cds.png" alt="" border="0">
-
+<img src="https://raw.githubusercontent.com/tarunreturn/output_images/main/Project_2/Output/19.png" width="800"/>
 ---
 
 ## Conclusion
