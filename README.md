@@ -4,8 +4,7 @@
 ## Objective
 Deploy a full-stack application using a DevOps pipeline with automation, security scans, and deployments across local and cloud environments, ensuring reliability, scalability, and continuous integration/continuous deployment (CI/CD).
 
-<img src="https://i.imghippo.com/files/x4056TWw.png" alt="" border="0">
-
+<img src="https://raw.githubusercontent.com/tarunreturn/output_images/main/Project_2/Output/1.png" width="800"/>
 ---
 
 ## Components and Tools
